@@ -13,6 +13,8 @@
 		57CBC5DE22405E8200A04623 /* DesafioAgenda.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 57CBC5DC22405E8200A04623 /* DesafioAgenda.xcdatamodeld */; };
 		57CBC5E022405E8300A04623 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57CBC5DF22405E8300A04623 /* Assets.xcassets */; };
 		57CBC5E322405E8300A04623 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57CBC5E122405E8300A04623 /* LaunchScreen.storyboard */; };
+		57CBC5EE2240614700A04623 /* ContatosTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57CBC5ED2240614700A04623 /* ContatosTableViewController.swift */; };
+		57CBC5F02240615A00A04623 /* Contatos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57CBC5EF2240615A00A04623 /* Contatos.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		57CBC5DF22405E8300A04623 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		57CBC5E222405E8300A04623 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		57CBC5E422405E8300A04623 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		57CBC5ED2240614700A04623 /* ContatosTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContatosTableViewController.swift; sourceTree = "<group>"; };
+		57CBC5EF2240615A00A04623 /* Contatos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contatos.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +60,41 @@
 		57CBC5D422405E8200A04623 /* DesafioAgenda */ = {
 			isa = PBXGroup;
 			children = (
-				57CBC5D522405E8200A04623 /* AppDelegate.swift */,
-				57CBC5D722405E8200A04623 /* ViewController.swift */,
-				57CBC5D922405E8200A04623 /* Main.storyboard */,
-				57CBC5DF22405E8300A04623 /* Assets.xcassets */,
-				57CBC5E122405E8300A04623 /* LaunchScreen.storyboard */,
+				57CBC5EC224060E200A04623 /* View */,
+				57CBC5EB224060DC00A04623 /* Model */,
+				57CBC5EA224060D000A04623 /* Controlle */,
 				57CBC5E422405E8300A04623 /* Info.plist */,
 				57CBC5DC22405E8200A04623 /* DesafioAgenda.xcdatamodeld */,
 			);
 			path = DesafioAgenda;
+			sourceTree = "<group>";
+		};
+		57CBC5EA224060D000A04623 /* Controlle */ = {
+			isa = PBXGroup;
+			children = (
+				57CBC5D522405E8200A04623 /* AppDelegate.swift */,
+				57CBC5D722405E8200A04623 /* ViewController.swift */,
+				57CBC5ED2240614700A04623 /* ContatosTableViewController.swift */,
+			);
+			path = Controlle;
+			sourceTree = "<group>";
+		};
+		57CBC5EB224060DC00A04623 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				57CBC5EF2240615A00A04623 /* Contatos.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		57CBC5EC224060E200A04623 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				57CBC5DF22405E8300A04623 /* Assets.xcassets */,
+				57CBC5D922405E8200A04623 /* Main.storyboard */,
+				57CBC5E122405E8300A04623 /* LaunchScreen.storyboard */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -140,6 +170,8 @@
 			files = (
 				57CBC5D822405E8200A04623 /* ViewController.swift in Sources */,
 				57CBC5DE22405E8200A04623 /* DesafioAgenda.xcdatamodeld in Sources */,
+				57CBC5F02240615A00A04623 /* Contatos.swift in Sources */,
+				57CBC5EE2240614700A04623 /* ContatosTableViewController.swift in Sources */,
 				57CBC5D622405E8200A04623 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
