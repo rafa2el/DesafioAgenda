@@ -46,7 +46,19 @@ UINavigationControllerDelegate{
     
     override func viewWillAppear(_ animated: Bool) {
         if editContato != nil {
-            nomeSobrenome.text = editContato?.nome
+            self.nomeSobrenome.text = editContato?.nome
+            self.endereco.text = editContato?.endereco
+            self.telResidencial.text = editContato?.telefoneResidencial
+            self.celular.text = editContato?.celular
+            self.email.text = editContato?.email
+            self.empresa.text = editContato?.empresa
+            
+            
+            let imagem: UIImage = UIImage(data:(editContato?.image)!,scale:1.0)!
+            
+            self.img_view.image = imagem
+            
+           // self.site.text = NSString
         }
     }
     
@@ -57,7 +69,7 @@ UINavigationControllerDelegate{
     
     
     @IBAction func btn_save(_ sender: Any) {
-        //let data = (img_view?.image)!.pngData()
+        let data = (img_view?.image)!.pngData()
         
         
         let contato = Contato(context: contexto)
@@ -66,7 +78,12 @@ UINavigationControllerDelegate{
         contato.celular = celular.text
         contato.email = email.text
         contato.empresa = empresa.text
-        //contato.site = site
+        
+        contato.image = data
+        
+        let urlstring = self.site.text
+        
+        contato.site = (NSURL(string: urlstring!)! as URL)
         
         do {
             try contexto.save()

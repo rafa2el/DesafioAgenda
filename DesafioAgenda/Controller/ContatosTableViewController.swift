@@ -12,7 +12,7 @@ import CoreData
 class ContatosTableViewController: UITableViewController {
 
     var owner: ViewController?
-
+    let contexto = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -53,9 +53,18 @@ class ContatosTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
+            let contato = owner?.contatos[indexPath.row]
+            contexto.delete(contato!)
+           
+            do {
+                try contexto.save()
+            } catch  {
+                print("Erro ao salvar o contexto: \(error) ")
+            }
+
             owner?.contatos.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
-            tableView.reloadData()
+            
         }
     }
 
