@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		53FC74BE2241B0E5001EED11 /* EditContatoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53FC74BD2241B0E5001EED11 /* EditContatoViewController.swift */; };
 		57CBC5D622405E8200A04623 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57CBC5D522405E8200A04623 /* AppDelegate.swift */; };
 		57CBC5D822405E8200A04623 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57CBC5D722405E8200A04623 /* ViewController.swift */; };
 		57CBC5DB22405E8200A04623 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57CBC5D922405E8200A04623 /* Main.storyboard */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		53FC74BD2241B0E5001EED11 /* EditContatoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditContatoViewController.swift; sourceTree = "<group>"; };
 		57CBC5D222405E8200A04623 /* DesafioAgenda.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DesafioAgenda.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		57CBC5D522405E8200A04623 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		57CBC5D722405E8200A04623 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -62,21 +64,22 @@
 			children = (
 				57CBC5EC224060E200A04623 /* View */,
 				57CBC5EB224060DC00A04623 /* Model */,
-				57CBC5EA224060D000A04623 /* Controlle */,
+				57CBC5EA224060D000A04623 /* Controller */,
 				57CBC5E422405E8300A04623 /* Info.plist */,
 				57CBC5DC22405E8200A04623 /* DesafioAgenda.xcdatamodeld */,
 			);
 			path = DesafioAgenda;
 			sourceTree = "<group>";
 		};
-		57CBC5EA224060D000A04623 /* Controlle */ = {
+		57CBC5EA224060D000A04623 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
 				57CBC5D522405E8200A04623 /* AppDelegate.swift */,
 				57CBC5D722405E8200A04623 /* ViewController.swift */,
 				57CBC5ED2240614700A04623 /* ContatosTableViewController.swift */,
+				53FC74BD2241B0E5001EED11 /* EditContatoViewController.swift */,
 			);
-			path = Controlle;
+			path = Controller;
 			sourceTree = "<group>";
 		};
 		57CBC5EB224060DC00A04623 /* Model */ = {
@@ -171,6 +174,7 @@
 				57CBC5D822405E8200A04623 /* ViewController.swift in Sources */,
 				57CBC5DE22405E8200A04623 /* DesafioAgenda.xcdatamodeld in Sources */,
 				57CBC5F02240615A00A04623 /* Contatos.swift in Sources */,
+				53FC74BE2241B0E5001EED11 /* EditContatoViewController.swift in Sources */,
 				57CBC5EE2240614700A04623 /* ContatosTableViewController.swift in Sources */,
 				57CBC5D622405E8200A04623 /* AppDelegate.swift in Sources */,
 			);

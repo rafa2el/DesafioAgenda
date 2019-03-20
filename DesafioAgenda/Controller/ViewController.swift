@@ -29,7 +29,7 @@ class ViewController: UIViewController {
         do {
             contatos = try contexto.fetch(requisição)
             
-            if (contatos.count == 1) {
+            if (contatos.count == 0) {
                 let contato = Contato(context: contexto)
                 contato.nome = "Flobervalda Antares Montanha"
                 contato.endereco = "Angelo tozim 1399"
