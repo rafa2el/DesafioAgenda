@@ -349,7 +349,14 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="celular" destination="tCD-Tn-dd6" id="oWj-fE-dBD"/>
+                        <outlet property="email" destination="BmH-uh-Q1J" id="sja-O8-SdE"/>
+                        <outlet property="empresa" destination="Nfk-w5-yE4" id="YG9-a6-Qdt"/>
+                        <outlet property="endereco" destination="Nq5-05-UI8" id="lwB-Lu-c9f"/>
                         <outlet property="img_view" destination="8CK-a6-Sab" id="V52-XO-srp"/>
+                        <outlet property="nomeSobrenome" destination="VpQ-A1-tR3" id="hK0-m8-Rgd"/>
+                        <outlet property="site" destination="9gT-v9-md0" id="fHg-hh-Jbo"/>
+                        <outlet property="telResidencial" destination="EYb-GC-Kpm" id="i8s-iA-Xib"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jEs-qK-8fY" userLabel="First Responder" sceneMemberID="firstResponder"/>

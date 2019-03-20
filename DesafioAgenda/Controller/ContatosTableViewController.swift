@@ -36,7 +36,11 @@ class ContatosTableViewController: UITableViewController {
         // #warning Incomplete implementation, return the number of rows
         return owner!.contatos.count
     }
-
+    
+    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "contatos", for: indexPath)
         let prg = owner?.contatos
@@ -47,6 +51,24 @@ class ContatosTableViewController: UITableViewController {
         return cell
     }
 
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            owner?.contatos.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .fade)
+            tableView.reloadData()
+        }
+    }
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let next = segue.destination as! EditContatoViewController
+        next.owner = self
+        if segue.identifier == "edit" {
+            next.editContato = owner?.contatos[(tableView.indexPathForSelectedRow?.row)!]
+        } else {
+            next.editContato = nil
+        }
+    }
+    
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
