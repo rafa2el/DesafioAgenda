@@ -14,8 +14,27 @@ class ContatosTableViewController: UITableViewController {
     var owner: ViewController?
     let contexto = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
 
+    lazy var atualizar:UIRefreshControl = {
+        let refresControl = UIRefreshControl()
+        refresControl.addTarget(self, action: #selector(ContatosTableViewController.atualizarDados(_:)), for: .valueChanged)
+        refresControl.tintColor = UIColor.blue
+        return refresControl
+    }()
+    
+    
+    @objc func atualizarDados(_ refresControl: UIRefreshControl){
+        self.tableView.reloadData()
+        refresControl.endRefreshing()
+    }
+    
+    
+    
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.tableView.addSubview(self.atualizar)
         navigationItem.rightBarButtonItems?.append(editButtonItem)
         
         // Uncomment the following line to preserve selection between presentations
@@ -48,6 +67,16 @@ class ContatosTableViewController: UITableViewController {
         cell.textLabel?.text = prg![indexPath.row].nome
         cell.detailTextLabel?.text = prg![indexPath.row].endereco
         
+        cell.imageView?.layer.borderWidth = 0.1
+        cell.imageView?.layer.masksToBounds = false
+        cell.imageView?.layer.borderColor = UIColor.black.cgColor
+        cell.imageView?.layer.cornerRadius = (cell.imageView?.frame.size.width)! / 4
+        cell.imageView?.clipsToBounds = true
+        
+       // let imagem: UIImage = UIImage(data:(prg![indexPath.row].image)!,scale:1.0)!
+        //cell.imageView?.image = imagem
+        
+       
         return cell
     }
 
@@ -73,11 +102,33 @@ class ContatosTableViewController: UITableViewController {
         next.owner = self
         if segue.identifier == "edit" {
             next.editContato = owner?.contatos[(tableView.indexPathForSelectedRow?.row)!]
+            next.table = self
         } else {
             next.editContato = nil
+            next.table = self
         }
     }
     
+    func addContato(_ contato : Contato) {
+        
+        var cont = Contato(context: contexto)
+        cont = contato
+    
+        do {
+            try contexto.save()
+        } catch  {
+            print("Erro ao salvar o contexto: \(error) ")
+        }
+        self.tableView.reloadData()
+
+    }
+    
+    func editContato(_ contato : Contato) {
+        let index = tableView.indexPathForSelectedRow?.row
+        //TODO falta fazer o editar
+        self.tableView.reloadData()
+    }
+
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {

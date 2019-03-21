@@ -14,6 +14,8 @@ UINavigationControllerDelegate{
     
     var owner : ContatosTableViewController?
     var editContato: Contato?
+    var table: ContatosTableViewController?
+    
     
     @IBOutlet weak var img_view: UIImageView!
     
@@ -34,7 +36,7 @@ UINavigationControllerDelegate{
         super.viewDidLoad()
 
         //altera o componente de imagem para ficar um circulo
-        img_view.layer.borderWidth = 1
+        img_view.layer.borderWidth = 0.1
         img_view.layer.masksToBounds = false
         img_view.layer.borderColor = UIColor.black.cgColor
         img_view.layer.cornerRadius = img_view.frame.height / 2
@@ -85,12 +87,14 @@ UINavigationControllerDelegate{
         
         contato.site = (NSURL(string: urlstring!)! as URL)
         
-        do {
-            try contexto.save()
-        } catch  {
-            print("Erro ao salvar o contexto: \(error) ")
+        if (editContato != nil) {
+           owner?.editContato(contato)
         }
-        owner?.tableView.reloadData()
+        else {
+            owner?.addContato(contato)
+        }
+        table?.tableView.reloadData()
+        self.navigationController?.popViewController(animated: true)
     }
     
     @IBAction func btn_pick(_ sender: Any) {
