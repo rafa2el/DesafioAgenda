@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		53ECFC0322447CA800098F81 /* VisualizarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53ECFC0222447CA800098F81 /* VisualizarViewController.swift */; };
+		53ECFC0522448B9400098F81 /* agenda.png in Resources */ = {isa = PBXBuildFile; fileRef = 53ECFC0422448B9400098F81 /* agenda.png */; };
 		53FC74BE2241B0E5001EED11 /* EditContatoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53FC74BD2241B0E5001EED11 /* EditContatoViewController.swift */; };
 		57CBC5D622405E8200A04623 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57CBC5D522405E8200A04623 /* AppDelegate.swift */; };
 		57CBC5D822405E8200A04623 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57CBC5D722405E8200A04623 /* ViewController.swift */; };
@@ -19,6 +21,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		53ECFC0222447CA800098F81 /* VisualizarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisualizarViewController.swift; sourceTree = "<group>"; };
+		53ECFC0422448B9400098F81 /* agenda.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = agenda.png; sourceTree = "<group>"; };
 		53FC74BD2241B0E5001EED11 /* EditContatoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditContatoViewController.swift; sourceTree = "<group>"; };
 		57CBC5D222405E8200A04623 /* DesafioAgenda.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DesafioAgenda.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		57CBC5D522405E8200A04623 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -78,6 +82,7 @@
 				57CBC5D722405E8200A04623 /* ViewController.swift */,
 				57CBC5ED2240614700A04623 /* ContatosTableViewController.swift */,
 				53FC74BD2241B0E5001EED11 /* EditContatoViewController.swift */,
+				53ECFC0222447CA800098F81 /* VisualizarViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -94,6 +99,7 @@
 			isa = PBXGroup;
 			children = (
 				57CBC5DF22405E8300A04623 /* Assets.xcassets */,
+				53ECFC0422448B9400098F81 /* agenda.png */,
 				57CBC5D922405E8200A04623 /* Main.storyboard */,
 				57CBC5E122405E8300A04623 /* LaunchScreen.storyboard */,
 			);
@@ -159,6 +165,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				57CBC5E322405E8300A04623 /* LaunchScreen.storyboard in Resources */,
+				53ECFC0522448B9400098F81 /* agenda.png in Resources */,
 				57CBC5E022405E8300A04623 /* Assets.xcassets in Resources */,
 				57CBC5DB22405E8200A04623 /* Main.storyboard in Resources */,
 			);
@@ -174,6 +181,7 @@
 				57CBC5D822405E8200A04623 /* ViewController.swift in Sources */,
 				57CBC5DE22405E8200A04623 /* DesafioAgenda.xcdatamodeld in Sources */,
 				57CBC5F02240615A00A04623 /* Contatos.swift in Sources */,
+				53ECFC0322447CA800098F81 /* VisualizarViewController.swift in Sources */,
 				53FC74BE2241B0E5001EED11 /* EditContatoViewController.swift in Sources */,
 				57CBC5EE2240614700A04623 /* ContatosTableViewController.swift in Sources */,
 				57CBC5D622405E8200A04623 /* AppDelegate.swift in Sources */,

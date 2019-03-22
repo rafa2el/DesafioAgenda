@@ -27,15 +27,12 @@ class ContatosTableViewController: UITableViewController {
         refresControl.endRefreshing()
     }
     
-    
-    
-    
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableView.addSubview(self.atualizar)
-        navigationItem.rightBarButtonItems?.append(editButtonItem)
+        //navigationItem.rightBarButtonItems?.append(editButtonItem)
+        
+        tableView.reloadData()
         
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -73,8 +70,13 @@ class ContatosTableViewController: UITableViewController {
         cell.imageView?.layer.cornerRadius = (cell.imageView?.frame.size.width)! / 4
         cell.imageView?.clipsToBounds = true
         
-       // let imagem: UIImage = UIImage(data:(prg![indexPath.row].image)!,scale:1.0)!
-        //cell.imageView?.image = imagem
+     
+       // for imagem in (prg![indexPath.row].imagens?.imagem)! {
+           // foto = imagem
+      //  }
+        
+      //  let imagem: UIImage = UIImage(data: foto!,scale:1.0)!
+       // cell.imageView?.image = imagem
         
        
         return cell
@@ -98,14 +100,15 @@ class ContatosTableViewController: UITableViewController {
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let next = segue.destination as! EditContatoViewController
-        next.owner = self
-        if segue.identifier == "edit" {
-            next.editContato = owner?.contatos[(tableView.indexPathForSelectedRow?.row)!]
-            next.table = self
-        } else {
+        if segue.identifier == "visualizar" {
+            let next = segue.destination as! VisualizarViewController
+            let index = tableView.indexPathForSelectedRow?.row
+            next.owner = self
+            next.index = index!
+        }else if segue.identifier == "cad"{
+            let next = segue.destination as! EditContatoViewController
             next.editContato = nil
-            next.table = self
+            next.owner = self
         }
     }
     

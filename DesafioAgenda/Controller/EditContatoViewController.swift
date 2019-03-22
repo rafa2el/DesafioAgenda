@@ -15,7 +15,7 @@ UINavigationControllerDelegate{
     var owner : ContatosTableViewController?
     var editContato: Contato?
     var table: ContatosTableViewController?
-    
+    var visualizar: Bool = false
     
     @IBOutlet weak var img_view: UIImageView!
     
@@ -56,11 +56,12 @@ UINavigationControllerDelegate{
             self.empresa.text = editContato?.empresa
             
             
-            let imagem: UIImage = UIImage(data:(editContato?.image)!,scale:1.0)!
-            
+            let imagem: UIImage = UIImage(data:(editContato?.imagens?.imagem)!,scale:1.0)!
             self.img_view.image = imagem
             
            // self.site.text = NSString
+        }else if visualizar == true{
+            print("Visualizar")
         }
     }
     
@@ -71,7 +72,7 @@ UINavigationControllerDelegate{
     
     
     @IBAction func btn_save(_ sender: Any) {
-        let data = (img_view?.image)!.pngData()
+        let imagem = (img_view?.image)!.pngData()
         
         
         let contato = Contato(context: contexto)
@@ -81,7 +82,7 @@ UINavigationControllerDelegate{
         contato.email = email.text
         contato.empresa = empresa.text
         
-        contato.image = data
+        contato.imagens?.imagem?.append(imagem!)
         
         let urlstring = self.site.text
         
@@ -94,7 +95,7 @@ UINavigationControllerDelegate{
             owner?.addContato(contato)
         }
         table?.tableView.reloadData()
-        self.navigationController?.popViewController(animated: true)
+       // self.navigationController?.popViewController(animated: true)
     }
     
     @IBAction func btn_pick(_ sender: Any) {

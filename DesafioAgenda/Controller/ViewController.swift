@@ -28,16 +28,26 @@ class ViewController: UIViewController {
         
         do {
             contatos = try contexto.fetch(requisição)
-            
+            let contato = Contato(context: contexto)
+
             if (contatos.count == 0) {
-                let contato = Contato(context: contexto)
-                contato.nome = "Flobervalda Antares Montanha"
+                
+                contato.nome = "Rafael Pacheco"
                 contato.endereco = "Angelo tozim 1399"
+                contato.telefoneResidencial = "(41) 3289-6913"
+                contato.celular = "(41 )99667-3801"
+                contato.site = URL(string: "https://www.google.com.br")!
+                
+                var imagens:[Data] = []
+                contato.imagens?.imagem?.append(imagens[0])
+                //contato.imagens?.imagem?.append(imagens[0])
                 do {
                     try contexto.save()
                 } catch  {
                     print("Erro ao salvar o contexto: \(error) ")
                 }
+                contatos = []
+                contatos = try contexto.fetch(requisição)
                 
             }
             
