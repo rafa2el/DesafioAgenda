@@ -31,16 +31,12 @@ class ContatosTableViewController: UITableViewController {
         super.viewDidLoad()
         self.tableView.addSubview(self.atualizar)
         //navigationItem.rightBarButtonItems?.append(editButtonItem)
-        
-        tableView.reloadData()
-        
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
-
+    
+    
+    override func viewWillAppear(_ animated: Bool) {
+        loadData()
+    }
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -60,23 +56,9 @@ class ContatosTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "contatos", for: indexPath)
         let prg = owner?.contatos
-        
+       
         cell.textLabel?.text = prg![indexPath.row].nome
         cell.detailTextLabel?.text = prg![indexPath.row].endereco
-        
-        cell.imageView?.layer.borderWidth = 0.1
-        cell.imageView?.layer.masksToBounds = false
-        cell.imageView?.layer.borderColor = UIColor.black.cgColor
-        cell.imageView?.layer.cornerRadius = (cell.imageView?.frame.size.width)! / 4
-        cell.imageView?.clipsToBounds = true
-        
-     
-       // for imagem in (prg![indexPath.row].imagens?.imagem)! {
-           // foto = imagem
-      //  }
-        
-      //  let imagem: UIImage = UIImage(data: foto!,scale:1.0)!
-       // cell.imageView?.image = imagem
         
        
         return cell
@@ -103,8 +85,9 @@ class ContatosTableViewController: UITableViewController {
         if segue.identifier == "visualizar" {
             let next = segue.destination as! VisualizarViewController
             let index = tableView.indexPathForSelectedRow?.row
-            next.owner = self
+            next.contato = owner?.contatos[index!]
             next.index = index!
+            next.owner = self
         }else if segue.identifier == "cad"{
             let next = segue.destination as! EditContatoViewController
             next.editContato = nil
@@ -114,23 +97,35 @@ class ContatosTableViewController: UITableViewController {
     
     func addContato(_ contato : Contato) {
         
-        var cont = Contato(context: contexto)
-        cont = contato
- //
         do {
             try contexto.save()
         } catch  {
             print("Erro ao salvar o contexto: \(error) ")
         }
         loadData()
-        self.tableView.reloadData()
-
+        tableView.reloadData()
+        self.navigationController?.popViewController(animated: true)
+        
     }
     
-    func editContato(_ contato : Contato) {
+    func editContato(_ ctt : Contato, _ indexx: Int) {
         let index = tableView.indexPathForSelectedRow?.row
-        //TODO falta fazer o editar
-        self.tableView.reloadData()
+        owner?.contatos[index!].nome = ctt.nome
+        owner?.contatos[index!].telefoneResidencial = ctt.telefoneResidencial
+        owner?.contatos[index!].celular = ctt.celular
+        owner?.contatos[index!].endereco = ctt.endereco
+        owner?.contatos[index!].email = ctt.email
+        owner?.contatos[index!].site = ctt.site
+        owner?.contatos[index!].imagens = ctt.imagens
+        
+        do {
+            try contexto.save()
+        } catch  {
+            print("Erro ao editar contexto: \(error) ")
+        }
+        loadData()
+        self.navigationController?.popViewController(animated: true)
+        
     }
     
     
@@ -145,54 +140,4 @@ class ContatosTableViewController: UITableViewController {
         
     }
     
-   
-    
-
-    
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

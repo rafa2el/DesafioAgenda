@@ -18,44 +18,8 @@ class ViewController: UIViewController {
     
     var contatos:[Contato] = []
     
-    
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        let requisição: NSFetchRequest<Contato> = Contato.fetchRequest()
-        
-        do {
-            contatos = try contexto.fetch(requisição)
-            let contato = Contato(context: contexto)
-
-            if (contatos.count == 0) {
-                
-                contato.nome = "Rafael Pacheco"
-                contato.endereco = "Angelo tozim 1399"
-                contato.telefoneResidencial = "(41) 3289-6913"
-                contato.celular = "(41 )99667-3801"
-                contato.site = URL(string: "https://www.google.com.br")!
-                
-                //var imagens:[Data] = []
-               // contato.imagens?.imagem?.append(imagens[0])
-                //contato.imagens?.imagem?.append(imagens[0])
-                do {
-                    try contexto.save()
-                } catch  {
-                    print("Erro ao salvar o contexto: \(error) ")
-                }
-                contatos = []
-                contatos = try contexto.fetch(requisição)
-                
-            }
-            
-            
-            print(contatos)
-        } catch  {
-            print("Erro ao ler o contexto: \(error) ")
-        }
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

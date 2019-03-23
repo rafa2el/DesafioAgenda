@@ -14,10 +14,7 @@ UINavigationControllerDelegate{
     
     var owner : ContatosTableViewController?
     var editContato: Contato?
-    
-    var table: ContatosTableViewController?
-    var visualizar: Bool = false
-    
+    var index = 0
     @IBOutlet weak var img_view: UIImageView!
     
     let imagePicker = UIImagePickerController()
@@ -43,7 +40,6 @@ UINavigationControllerDelegate{
         img_view.layer.cornerRadius = img_view.frame.height / 2
         img_view.clipsToBounds = true
 
-        // Do any additional setup after loading the view.
     }
     
     
@@ -56,13 +52,12 @@ UINavigationControllerDelegate{
             self.email.text = editContato?.email
             self.empresa.text = editContato?.empresa
             
+            for im in editContato!.imagens!{
+                let imagem = im as! Foto
+                img_view.image = UIImage(data: imagem.imagem!)
+                break
+            }
             
-            //let imagem: UIImage = UIImage(data:(editContato?.imagens?.imagem)!,scale:1.0)!
-            //self.img_view.image = imagem
-            
-           // self.site.text = NSString
-        }else if visualizar == true{
-            print("Visualizar")
         }
     }
     
@@ -77,9 +72,10 @@ UINavigationControllerDelegate{
         
         
         let contato = Contato(context: contexto)
-        let foto = Imagens(context: contexto)
+        let foto = Foto(context: contexto)
         
         contato.nome = nomeSobrenome.text
+        contato.endereco = endereco.text
         contato.telefoneResidencial = telResidencial.text
         contato.celular = celular.text
         contato.email = email.text
@@ -87,7 +83,7 @@ UINavigationControllerDelegate{
         
         foto.imagem = imagem
         
-        contato.imagens?.adding(foto)
+        contato.addToImagens(foto)
         
         
         let urlstring = self.site.text
@@ -95,13 +91,13 @@ UINavigationControllerDelegate{
         contato.site = (NSURL(string: urlstring!)! as URL)
         
         if (editContato != nil) {
-           owner?.editContato(contato)
+           owner?.editContato(contato, index)
         }
         else {
             owner?.addContato(contato)
         }
-
-       self.navigationController?.popViewController(animated: true)
+        
+       
     }
     
     @IBAction func btn_pick(_ sender: Any) {

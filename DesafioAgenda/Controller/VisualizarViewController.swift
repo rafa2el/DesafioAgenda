@@ -10,9 +10,10 @@ import UIKit
 
 class VisualizarViewController: UIViewController {
 
-    var owner : ContatosTableViewController?
+    var contato : Contato?
     var index = 0
-    
+    var owner : ContatosTableViewController?
+
     @IBOutlet weak var imgContato: UIImageView!
     @IBOutlet weak var lblNome: UILabel!
     @IBOutlet weak var lblEndereco: UILabel!
@@ -36,25 +37,24 @@ class VisualizarViewController: UIViewController {
     }
     
     private func visualizar(){
-        
-        print(owner?.owner?.contatos[index].imagens?.count)
    
-        for image in  (owner?.owner?.contatos[index].imagens)!{
-            imgContato.image = UIImage(data:(image as! Data),scale:1.0)!
+        for im in contato!.imagens!{
+            let imagem = im as! Foto
+            imgContato.image = UIImage(data: imagem.imagem!)
+            break
         }
-        
-
-        
-        lblNome.text = owner?.owner?.contatos[index].nome
-        lblTelResidencial.text = owner?.owner?.contatos[index].telefoneResidencial
-        lblCelular.text = owner?.owner?.contatos[index].celular
-        lblEmpresa.text = owner?.owner?.contatos[index].empresa
-        lblEmail.text = owner?.owner?.contatos[index].email
+ 
+        lblNome.text = contato?.nome
+        lblEndereco.text = contato!.endereco
+        lblTelResidencial.text = contato!.telefoneResidencial
+        lblCelular.text = self.contato!.celular
+        lblEmpresa.text = self.contato!.empresa
+        lblEmail.text = self.contato!.email
        
         
         let attributedString = NSMutableAttributedString(string: "Clique aqui!")
    
-        attributedString.setAttributes([.link: owner?.owner?.contatos[index].site], range: NSMakeRange(7, 4))
+        attributedString.setAttributes([.link: self.contato!.site], range: NSMakeRange(7, 4))
         
         self.txtSite.attributedText = attributedString
         self.txtSite.isUserInteractionEnabled = true
@@ -67,14 +67,15 @@ class VisualizarViewController: UIViewController {
         ]
         
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    
+    
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "edit" {
+            let next = segue.destination as! EditContatoViewController
+            next.editContato = contato
+            next.index = index
+            next.owner = owner
+        }
     }
-    */
-
 }
