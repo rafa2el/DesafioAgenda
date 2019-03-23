@@ -122,6 +122,7 @@ class ContatosTableViewController: UITableViewController {
         } catch  {
             print("Erro ao salvar o contexto: \(error) ")
         }
+        loadData()
         self.tableView.reloadData()
 
     }
@@ -131,6 +132,23 @@ class ContatosTableViewController: UITableViewController {
         //TODO falta fazer o editar
         self.tableView.reloadData()
     }
+    
+    
+    
+    func loadData(){
+        let requisição: NSFetchRequest<Contato> = Contato.fetchRequest()
+        do {
+            owner!.contatos = try contexto.fetch(requisição)
+        } catch  {
+            print("Erro ao ler o contexto: \(error) ")
+        }
+        
+    }
+    
+   
+    
+
+    
 
     /*
     // Override to support conditional editing of the table view.

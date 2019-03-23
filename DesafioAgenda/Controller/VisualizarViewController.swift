@@ -36,6 +36,15 @@ class VisualizarViewController: UIViewController {
     }
     
     private func visualizar(){
+        
+        print(owner?.owner?.contatos[index].imagens?.count)
+   
+        for image in  (owner?.owner?.contatos[index].imagens)!{
+            imgContato.image = UIImage(data:(image as! Data),scale:1.0)!
+        }
+        
+
+        
         lblNome.text = owner?.owner?.contatos[index].nome
         lblTelResidencial.text = owner?.owner?.contatos[index].telefoneResidencial
         lblCelular.text = owner?.owner?.contatos[index].celular

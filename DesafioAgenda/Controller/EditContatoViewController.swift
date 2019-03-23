@@ -14,6 +14,7 @@ UINavigationControllerDelegate{
     
     var owner : ContatosTableViewController?
     var editContato: Contato?
+    
     var table: ContatosTableViewController?
     var visualizar: Bool = false
     
@@ -56,8 +57,8 @@ UINavigationControllerDelegate{
             self.empresa.text = editContato?.empresa
             
             
-            let imagem: UIImage = UIImage(data:(editContato?.imagens?.imagem)!,scale:1.0)!
-            self.img_view.image = imagem
+            //let imagem: UIImage = UIImage(data:(editContato?.imagens?.imagem)!,scale:1.0)!
+            //self.img_view.image = imagem
             
            // self.site.text = NSString
         }else if visualizar == true{
@@ -76,13 +77,18 @@ UINavigationControllerDelegate{
         
         
         let contato = Contato(context: contexto)
+        let foto = Imagens(context: contexto)
+        
         contato.nome = nomeSobrenome.text
         contato.telefoneResidencial = telResidencial.text
         contato.celular = celular.text
         contato.email = email.text
         contato.empresa = empresa.text
         
-        contato.imagens?.imagem?.append(imagem!)
+        foto.imagem = imagem
+        
+        contato.imagens?.adding(foto)
+        
         
         let urlstring = self.site.text
         
@@ -94,8 +100,8 @@ UINavigationControllerDelegate{
         else {
             owner?.addContato(contato)
         }
-        table?.tableView.reloadData()
-       // self.navigationController?.popViewController(animated: true)
+
+       self.navigationController?.popViewController(animated: true)
     }
     
     @IBAction func btn_pick(_ sender: Any) {

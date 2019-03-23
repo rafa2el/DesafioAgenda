@@ -31,17 +31,10 @@
                                     <segue destination="F2G-g6-d5l" kind="show" identifier="listar" id="cdd-3J-nTT"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="agenda.png" translatesAutoresizingMaskIntoConstraints="NO" id="apT-qE-wnf">
-                                <rect key="frame" x="67" y="147" width="240" height="128"/>
-                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="KJk-du-10w" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="33" id="6Wp-3v-nAv"/>
-                            <constraint firstItem="apT-qE-wnf" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="67" id="DjC-pw-ytq"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="apT-qE-wnf" secondAttribute="trailing" constant="68" id="K4y-LO-qnx"/>
-                            <constraint firstItem="apT-qE-wnf" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="83" id="NxL-fo-9aC"/>
-                            <constraint firstItem="KJk-du-10w" firstAttribute="top" secondItem="apT-qE-wnf" secondAttribute="bottom" constant="81" id="ahZ-RC-GP5"/>
                             <constraint firstItem="KJk-du-10w" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="292" id="jVt-2q-vWr"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="KJk-du-10w" secondAttribute="trailing" constant="33" id="zU8-xx-ZvA"/>
                         </constraints>
@@ -106,15 +99,19 @@
                                 <rect key="frame" x="5" y="69" width="365" height="123"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Qbv-oX-xpm">
-                                        <rect key="frame" x="145" y="16" width="74" height="91"/>
+                                        <rect key="frame" x="136" y="16" width="93" height="91"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="91" id="Eek-5j-awf"/>
+                                            <constraint firstAttribute="width" constant="93" id="SrI-OV-c1t"/>
+                                        </constraints>
                                     </imageView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="Qbv-oX-xpm" secondAttribute="trailing" constant="146" id="MdM-Db-ChX"/>
-                                    <constraint firstItem="Qbv-oX-xpm" firstAttribute="leading" secondItem="DLW-iZ-zjC" secondAttribute="leading" constant="145" id="QKC-4Y-k2a"/>
-                                    <constraint firstAttribute="bottom" secondItem="Qbv-oX-xpm" secondAttribute="bottom" constant="16" id="Z4U-4W-1cH"/>
-                                    <constraint firstItem="Qbv-oX-xpm" firstAttribute="top" secondItem="DLW-iZ-zjC" secondAttribute="top" constant="16" id="sfi-pg-Ccj"/>
+                                    <constraint firstAttribute="trailing" secondItem="Qbv-oX-xpm" secondAttribute="trailing" constant="136" id="98q-nP-8XE"/>
+                                    <constraint firstAttribute="bottom" secondItem="Qbv-oX-xpm" secondAttribute="bottom" constant="16" id="SZi-DG-mL0"/>
+                                    <constraint firstItem="Qbv-oX-xpm" firstAttribute="leading" secondItem="DLW-iZ-zjC" secondAttribute="leading" constant="136" id="q5m-up-9Yb"/>
+                                    <constraint firstItem="Qbv-oX-xpm" firstAttribute="top" secondItem="DLW-iZ-zjC" secondAttribute="top" constant="16" id="vf7-3C-DTa"/>
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Nome" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="prW-hI-4ym">
@@ -399,7 +396,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ghT-D0-Tpd">
                                 <rect key="frame" x="0.0" y="64" width="375" height="173"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8CK-a6-Sab">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8CK-a6-Sab">
                                         <rect key="frame" x="140" y="8" width="94" height="90"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="90" id="0Ko-Tf-oRs"/>
@@ -545,10 +542,7 @@
             <point key="canvasLocation" x="136.80000000000001" y="133.5832083958021"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="agenda.png" width="512" height="512"/>
-    </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="4uO-RW-CXW"/>
+        <segue reference="LFQ-3c-yHS"/>
     </inferredMetricsTieBreakers>
 </document>

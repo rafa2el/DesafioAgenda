@@ -38,8 +38,8 @@ class ViewController: UIViewController {
                 contato.celular = "(41 )99667-3801"
                 contato.site = URL(string: "https://www.google.com.br")!
                 
-                var imagens:[Data] = []
-                contato.imagens?.imagem?.append(imagens[0])
+                //var imagens:[Data] = []
+               // contato.imagens?.imagem?.append(imagens[0])
                 //contato.imagens?.imagem?.append(imagens[0])
                 do {
                     try contexto.save()
