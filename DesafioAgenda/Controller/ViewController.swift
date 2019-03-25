@@ -7,29 +7,24 @@
 //
 
 import UIKit
-import CoreData
 import UIKit
 
 
 class ViewController: UIViewController {
 
     
-    let contexto = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-    
-    var contatos:[Contato] = []
+    var contatos: ContatoViewModel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        contatos = ContatoViewModel()
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "listar" {
             let next = segue.destination as! ContatosTableViewController
-            next.owner = self
-            
+            next.contatoVM = contatos
         }
     }
-    
-
 }
 

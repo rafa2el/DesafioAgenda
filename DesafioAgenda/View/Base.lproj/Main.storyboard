@@ -31,11 +31,22 @@
                                     <segue destination="F2G-g6-d5l" kind="show" identifier="listar" id="cdd-3J-nTT"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_contact.png" translatesAutoresizingMaskIntoConstraints="NO" id="d9a-Yg-gim">
+                                <rect key="frame" x="67" y="144" width="240" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="N1j-9L-pvs"/>
+                                    <constraint firstAttribute="height" constant="128" id="XkP-7s-bBS"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="KJk-du-10w" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="33" id="6Wp-3v-nAv"/>
+                            <constraint firstItem="d9a-Yg-gim" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="67" id="Hth-xq-lVA"/>
+                            <constraint firstItem="d9a-Yg-gim" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="80" id="LCW-gQ-HuN"/>
+                            <constraint firstItem="KJk-du-10w" firstAttribute="top" secondItem="d9a-Yg-gim" secondAttribute="bottom" constant="84" id="aBn-pi-ARB"/>
                             <constraint firstItem="KJk-du-10w" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="292" id="jVt-2q-vWr"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="d9a-Yg-gim" secondAttribute="trailing" constant="68" id="ykM-8h-W86"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="KJk-du-10w" secondAttribute="trailing" constant="33" id="zU8-xx-ZvA"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -46,7 +57,7 @@
             </objects>
             <point key="canvasLocation" x="1076" y="133.5832083958021"/>
         </scene>
-        <!--Title-->
+        <!--Contatos-->
         <scene sceneID="VLb-XB-LvC">
             <objects>
                 <tableViewController id="F2G-g6-d5l" customClass="ContatosTableViewController" customModule="DesafioAgenda" customModuleProvider="target" sceneMemberID="viewController">
@@ -73,7 +84,7 @@
                         </connections>
                     </tableView>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" title="Title" id="9ne-a3-I7X">
+                    <navigationItem key="navigationItem" title="Contatos" id="9ne-a3-I7X">
                         <barButtonItem key="backBarButtonItem" title="Voltar" id="EZE-lk-oGe"/>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="mic-EZ-5K1">
                             <connections>
@@ -103,7 +114,7 @@
             </objects>
             <point key="canvasLocation" x="850" y="914"/>
         </scene>
-        <!--Title-->
+        <!--Visualizar-->
         <scene sceneID="9wD-3f-SkC">
             <objects>
                 <viewController id="jOm-OF-UhL" customClass="VisualizarViewController" customModule="DesafioAgenda" customModuleProvider="target" sceneMemberID="viewController">
@@ -114,8 +125,8 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DLW-iZ-zjC">
                                 <rect key="frame" x="5" y="69" width="365" height="123"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Qbv-oX-xpm">
-                                        <rect key="frame" x="136" y="16" width="93" height="91"/>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Qbv-oX-xpm">
+                                        <rect key="frame" x="136" y="16" width="93" height="78"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="91" id="Eek-5j-awf"/>
                                             <constraint firstAttribute="width" constant="93" id="SrI-OV-c1t"/>
@@ -229,13 +240,14 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Clique aqui" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="CG9-Hm-SRO">
-                                <rect key="frame" x="119" y="505" width="240" height="40"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nbb-qP-NAe">
+                                <rect key="frame" x="93" y="508" width="266" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <segue destination="jt3-ZC-3tx" kind="show" identifier="webView" id="JaT-Yk-TMJ"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -246,7 +258,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="SkL-rX-gMd"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Title" id="sQb-4A-p41">
+                    <navigationItem key="navigationItem" title="Visualizar" id="sQb-4A-p41">
                         <barButtonItem key="rightBarButtonItem" systemItem="edit" id="iIQ-EO-4va">
                             <connections>
                                 <segue destination="TIE-bt-sTq" kind="show" identifier="edit" id="LFQ-3c-yHS"/>
@@ -254,6 +266,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="btSite" destination="Nbb-qP-NAe" id="puf-EI-hCj"/>
                         <outlet property="imgContato" destination="Qbv-oX-xpm" id="YEd-g1-diP"/>
                         <outlet property="lblCelular" destination="D5X-c1-ejC" id="LDS-pd-fXE"/>
                         <outlet property="lblEmail" destination="7Mf-9C-bfM" id="B7A-B1-FTf"/>
@@ -261,12 +274,46 @@
                         <outlet property="lblEndereco" destination="bEi-Du-0K4" id="fGK-iP-b47"/>
                         <outlet property="lblNome" destination="GPZ-ew-Edq" id="sfw-XR-OQX"/>
                         <outlet property="lblTelResidencial" destination="MSa-j3-ahZ" id="3X7-q2-prH"/>
-                        <outlet property="txtSite" destination="CG9-Hm-SRO" id="djB-Md-19i"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xVi-Nh-BMA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2048.8000000000002" y="864.91754122938539"/>
+        </scene>
+        <!--Site-->
+        <scene sceneID="UxP-Nn-jQz">
+            <objects>
+                <viewController id="jt3-ZC-3tx" customClass="WebViewController" customModule="DesafioAgenda" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="UHx-pZ-z4k">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4w2-Lc-chv">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="623"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="4w2-Lc-chv" firstAttribute="bottom" secondItem="7dV-CX-Fo0" secondAttribute="bottom" id="Jby-dM-HF8"/>
+                            <constraint firstItem="4w2-Lc-chv" firstAttribute="leading" secondItem="7dV-CX-Fo0" secondAttribute="leading" id="bJl-EZ-bjD"/>
+                            <constraint firstItem="4w2-Lc-chv" firstAttribute="top" secondItem="UHx-pZ-z4k" secondAttribute="top" id="chL-hl-duq"/>
+                            <constraint firstItem="4w2-Lc-chv" firstAttribute="trailing" secondItem="7dV-CX-Fo0" secondAttribute="trailing" id="d71-Ar-fWU"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="7dV-CX-Fo0"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Site" id="Jhf-6V-nUs"/>
+                    <connections>
+                        <outlet property="WebView" destination="4w2-Lc-chv" id="NjU-9l-efL"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SCE-2R-ygC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2943.1999999999998" y="847.82608695652175"/>
         </scene>
         <!--Inserir Contato-->
         <scene sceneID="7ts-fK-pd9">
@@ -566,6 +613,9 @@
             <point key="canvasLocation" x="136.80000000000001" y="133.5832083958021"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="icon_contact.png" width="128" height="128"/>
+    </resources>
     <inferredMetricsTieBreakers>
         <segue reference="LFQ-3c-yHS"/>
     </inferredMetricsTieBreakers>

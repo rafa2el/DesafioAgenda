@@ -13,6 +13,7 @@ UINavigationControllerDelegate{
 
     
     var owner : ContatosTableViewController?
+    //var contatoVM: ContatoViewModel!
     var editContato: Contato?
     var index = 0
     @IBOutlet weak var img_view: UIImageView!
@@ -68,7 +69,6 @@ UINavigationControllerDelegate{
     
     
     @IBAction func btn_save(_ sender: Any) {
-        let imagem = (img_view?.image)!.pngData()
         
         
         let contato = Contato(context: contexto)
@@ -81,17 +81,19 @@ UINavigationControllerDelegate{
         contato.email = email.text
         contato.empresa = empresa.text
         
-        foto.imagem = imagem
-        
-        contato.addToImagens(foto)
-        
+        let imagem = (img_view?.image)
+        if imagem != nil {
+
+            foto.imagem = imagem!.pngData()
+            contato.addToImagens(foto)
+        }
         
         let urlstring = self.site.text
         
         contato.site = (NSURL(string: urlstring!)! as URL)
         
         if (editContato != nil) {
-           owner?.editContato(contato, index)
+            owner?.editContato(contato, index)
         }
         else {
             owner?.addContato(contato)
