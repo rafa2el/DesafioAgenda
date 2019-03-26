@@ -32,6 +32,12 @@ class ContatosTableViewController: UITableViewController {
         self.tableView.addSubview(self.atualizar)
     }
     
+    
+    override func viewWillAppear(_ animated: Bool) {
+        contatoVM.loadData()
+        tableView.reloadData()
+    }
+    
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -49,12 +55,12 @@ class ContatosTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: "contatos", for: indexPath)
         let prg = contatoVM.contatos
        
         cell.textLabel?.text = prg[indexPath.row].nome
-        cell.detailTextLabel?.text = prg[indexPath.row].endereco
-        
+    
         return cell
     }
 
@@ -98,18 +104,23 @@ class ContatosTableViewController: UITableViewController {
     
     func editContato(_ ctt : Contato, _ index: Int) {
         //let index = tableView.indexPathForSelectedRow?.row
-        contatoVM.contatos[index].nome = ctt.nome
-        contatoVM.contatos[index].empresa = ctt.empresa
-        contatoVM.contatos[index].telefoneResidencial = ctt.telefoneResidencial
-        contatoVM.contatos[index].celular = ctt.celular
-        contatoVM.contatos[index].endereco = ctt.endereco
-        contatoVM.contatos[index].email = ctt.email
-        contatoVM.contatos[index].site = ctt.site
-        contatoVM.contatos[index].imagens = ctt.imagens
+        
+        //ctt.setValue(<#T##value: Any?##Any?#>, forKey: <#T##String#>)
+        
+        let contato: Contato = contatoVM.contatos[index]
+        contato.setValue(ctt.nome, forKeyPath: "nome")
+        contato.setValue(ctt.empresa, forKeyPath: "empresa")
+        contato.setValue(ctt.telefoneResidencial, forKeyPath: "telefoneResidencial")
+        contato.setValue(ctt.celular, forKeyPath: "celular")
+        contato.setValue(ctt.endereco, forKeyPath: "endereco")
+        contato.setValue(ctt.email, forKeyPath: "email")
+        contato.setValue(ctt.site, forKeyPath: "site")
+        contato.setValue(ctt.imagens, forKeyPath: "imagens")
+        
         
         contatoVM.saveData()
-        // tableView.reloadData()
-        self.navigationController?.popViewController(animated: true)
+        tableView.reloadData()
+       // self.navigationController?.popViewController(animated: true)
         
     }
 }

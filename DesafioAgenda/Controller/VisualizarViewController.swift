@@ -37,7 +37,13 @@ class VisualizarViewController: UIViewController {
         imgContato.layer.borderColor = UIColor.black.cgColor
         imgContato.layer.cornerRadius = imgContato.frame.height / 2
         imgContato.clipsToBounds = true
-        visualizarContatos()
+      //  visualizarContatos()
+    }
+    
+    
+    
+    override func viewWillAppear(_ animated: Bool) {
+      visualizarContatos()
     }
     
     private func visualizarContatos(){
@@ -75,6 +81,9 @@ class VisualizarViewController: UIViewController {
             let next = segue.destination as! WebViewController
              next.site = contatoVM.contatos[index].site
           //  next.site = URL(string: "www.cade.com.br")
+        }else if segue.identifier == "fotos"{
+            let next = segue.destination as! CollectionViewController
+            next.editContato = contatoVM.contatos[index]
         }
     }
 }

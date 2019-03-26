@@ -52,6 +52,7 @@ UINavigationControllerDelegate{
             self.celular.text = editContato?.celular
             self.email.text = editContato?.email
             self.empresa.text = editContato?.empresa
+            self.site.text = editContato?.site?.absoluteString
             
             for im in editContato!.imagens!{
                 let imagem = im as! Foto
@@ -71,31 +72,45 @@ UINavigationControllerDelegate{
     @IBAction func btn_save(_ sender: Any) {
         
         
-        let contato = Contato(context: contexto)
-        let foto = Foto(context: contexto)
-        
-        contato.nome = nomeSobrenome.text
-        contato.endereco = endereco.text
-        contato.telefoneResidencial = telResidencial.text
-        contato.celular = celular.text
-        contato.email = email.text
-        contato.empresa = empresa.text
-        
-        let imagem = (img_view?.image)
-        if imagem != nil {
-
-            foto.imagem = imagem!.pngData()
-            contato.addToImagens(foto)
-        }
-        
-        let urlstring = self.site.text
-        
-        contato.site = (NSURL(string: urlstring!)! as URL)
-        
         if (editContato != nil) {
-            owner?.editContato(contato, index)
-        }
-        else {
+            self.title = "Editar Contato"
+            editContato?.nome = self.nomeSobrenome.text
+            editContato?.endereco  = self.endereco.text
+            editContato?.telefoneResidencial = self.telResidencial.text
+            editContato?.celular =  self.celular.text
+            editContato?.email = self.email.text
+            editContato?.empresa = self.empresa.text
+            
+      
+            
+            let urlstring = self.site.text
+            editContato?.site = (NSURL(string: urlstring!.replacingOccurrences(of: "\\", with: "/"))! as URL)
+            
+            owner?.editContato(editContato!, index)
+             self.navigationController?.popViewController(animated: true)
+        } else {
+            
+            let contato = Contato(context: contexto)
+            let foto = Foto(context: contexto)
+            
+            contato.nome = nomeSobrenome.text
+            contato.endereco = endereco.text
+            contato.telefoneResidencial = telResidencial.text
+            contato.celular = celular.text
+            contato.email = email.text
+            contato.empresa = empresa.text
+            
+            let imagem = (img_view?.image)
+            if imagem != nil {
+                
+                foto.imagem = imagem!.pngData()
+                contato.addToImagens(foto)
+            }
+            
+            let urlstring = self.site.text
+            
+            contato.site = (NSURL(string: urlstring!)! as URL)
+            
             owner?.addContato(contato)
         }
         

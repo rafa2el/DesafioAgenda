@@ -33,6 +33,7 @@ class ContatoViewModel {
     func loadData() {
         do
         {
+          //  contatos = []
             contatos = try contexto.fetch(requestContatos)
         }
         catch
