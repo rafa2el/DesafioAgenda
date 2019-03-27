@@ -14,6 +14,8 @@ private let reuseIdentifier = "Cell"
 
 class CollectionViewController: UICollectionViewController {
     let myImage = UIImage(named: "Apple_Swift_Logo")
+    var owner : ContatosTableViewController?
+
     var editContato: Contato?
     
     override func viewDidLoad() {
@@ -40,4 +42,5 @@ class CollectionViewController: UICollectionViewController {
         
         return cell
     }
+    
 }

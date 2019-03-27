@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		538C3D55224AE1DF00A713FD /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 538C3D54224AE1DF00A713FD /* MapViewController.swift */; };
 		53ECFC0322447CA800098F81 /* VisualizarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53ECFC0222447CA800098F81 /* VisualizarViewController.swift */; };
 		53FC74BE2241B0E5001EED11 /* EditContatoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53FC74BD2241B0E5001EED11 /* EditContatoViewController.swift */; };
 		53FECCE822483B9C001406F5 /* ContatosViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53FECCE722483B9C001406F5 /* ContatosViewModel.swift */; };
@@ -25,6 +26,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		538C3D54224AE1DF00A713FD /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		53ECFC0222447CA800098F81 /* VisualizarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisualizarViewController.swift; sourceTree = "<group>"; };
 		53FC74BD2241B0E5001EED11 /* EditContatoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditContatoViewController.swift; sourceTree = "<group>"; };
 		53FECCE722483B9C001406F5 /* ContatosViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContatosViewModel.swift; sourceTree = "<group>"; };
@@ -103,6 +105,7 @@
 				53ECFC0222447CA800098F81 /* VisualizarViewController.swift */,
 				53FECCE92248571C001406F5 /* WebViewController.swift */,
 				579BFAC022499C5000B52ABC /* CollectionViewController.swift */,
+				538C3D54224AE1DF00A713FD /* MapViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -205,6 +208,7 @@
 				579BFAC122499C5000B52ABC /* CollectionViewController.swift in Sources */,
 				57CBC5F02240615A00A04623 /* Contatos.swift in Sources */,
 				53ECFC0322447CA800098F81 /* VisualizarViewController.swift in Sources */,
+				538C3D55224AE1DF00A713FD /* MapViewController.swift in Sources */,
 				53FC74BE2241B0E5001EED11 /* EditContatoViewController.swift in Sources */,
 				57CBC5EE2240614700A04623 /* ContatosTableViewController.swift in Sources */,
 				57CBC5D622405E8200A04623 /* AppDelegate.swift in Sources */,

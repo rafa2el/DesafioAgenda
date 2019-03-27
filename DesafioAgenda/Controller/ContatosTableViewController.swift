@@ -116,7 +116,8 @@ class ContatosTableViewController: UITableViewController {
         contato.setValue(ctt.email, forKeyPath: "email")
         contato.setValue(ctt.site, forKeyPath: "site")
         contato.setValue(ctt.imagens, forKeyPath: "imagens")
-        
+        contato.setValue(ctt.cep, forKeyPath: "cep")
+        contato.setValue(ctt.numero, forKeyPath: "numero")
         
         contatoVM.saveData()
         tableView.reloadData()

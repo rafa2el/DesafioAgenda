@@ -27,6 +27,9 @@ UINavigationControllerDelegate{
     @IBOutlet weak var email: UITextField!
     @IBOutlet weak var empresa: UITextField!
     @IBOutlet weak var site: UITextField!
+   
+    @IBOutlet weak var numero: UITextField!
+    @IBOutlet weak var cep: UITextField!
     
     let contexto = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
@@ -53,6 +56,10 @@ UINavigationControllerDelegate{
             self.email.text = editContato?.email
             self.empresa.text = editContato?.empresa
             self.site.text = editContato?.site?.absoluteString
+            let numero : Int32 = (editContato?.numero)!
+            self.numero.text = String(numero)
+            self.cep.text = editContato?.cep
+            
             
             for im in editContato!.imagens!{
                 let imagem = im as! Foto
@@ -80,9 +87,13 @@ UINavigationControllerDelegate{
             editContato?.celular =  self.celular.text
             editContato?.email = self.email.text
             editContato?.empresa = self.empresa.text
-            
-      
-            
+            if self.numero.text != ""{
+                let numero : Int32 = Int32(self.numero!.text!)!
+                editContato?.numero = numero
+            }
+
+            editContato?.cep = self.cep.text
+                
             let urlstring = self.site.text
             editContato?.site = (NSURL(string: urlstring!.replacingOccurrences(of: "\\", with: "/"))! as URL)
             
@@ -99,6 +110,12 @@ UINavigationControllerDelegate{
             contato.celular = celular.text
             contato.email = email.text
             contato.empresa = empresa.text
+            
+            if self.numero.text != ""{
+               let numero : Int32 = Int32(self.numero!.text!)!
+               contato.numero = numero
+            }
+            contato.cep = self.cep.text
             
             let imagem = (img_view?.image)
             if imagem != nil {

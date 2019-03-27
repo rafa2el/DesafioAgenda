@@ -2,10 +2,12 @@
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14460.32" systemVersion="18A391" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="Contato" representedClassName=".Contato" syncable="YES" codeGenerationType="class">
         <attribute name="celular" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="cep" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="email" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="empresa" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="endereco" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="nome" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="numero" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="site" optional="YES" attributeType="URI" syncable="YES"/>
         <attribute name="telefoneResidencial" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="imagens" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Foto" inverseName="contato" inverseEntity="Foto" syncable="YES"/>
@@ -15,7 +17,7 @@
         <relationship name="contato" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Contato" inverseName="imagens" inverseEntity="Contato" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Contato" positionX="-515.12890625" positionY="75.32421875" width="128" height="165"/>
+        <element name="Contato" positionX="-515.12890625" positionY="75.32421875" width="128" height="195"/>
         <element name="Foto" positionX="-63" positionY="45" width="128" height="75"/>
     </elements>
 </model>

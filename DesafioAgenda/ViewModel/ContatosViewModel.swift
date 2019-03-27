@@ -35,6 +35,7 @@ class ContatoViewModel {
         {
           //  contatos = []
             contatos = try contexto.fetch(requestContatos)
+            
         }
         catch
         {

@@ -8,14 +8,15 @@
 
 import UIKit
 
-class VisualizarViewController: UIViewController {
+class VisualizarViewController: UIViewController, UIImagePickerControllerDelegate,
+UINavigationControllerDelegate{
     
     var index = 0
     var contatoVM: ContatoViewModel!
     var owner : ContatosTableViewController?
-    
+    var addFoto = false
     let contexto = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-    
+    let imagePicker = UIImagePickerController()
     
     @IBOutlet weak var imgContato: UIImageView!
     @IBOutlet weak var lblNome: UILabel!
@@ -25,6 +26,8 @@ class VisualizarViewController: UIViewController {
     @IBOutlet weak var lblEmail: UILabel!
     @IBOutlet weak var lblCelular: UILabel!
     @IBOutlet weak var lblTelResidencial: UILabel!
+    @IBOutlet weak var lblNumero: UILabel!
+    @IBOutlet weak var lblCep: UILabel!
     
     
     @IBOutlet weak var btSite: UIButton!
@@ -43,7 +46,9 @@ class VisualizarViewController: UIViewController {
     
     
     override func viewWillAppear(_ animated: Bool) {
-      visualizarContatos()
+        if addFoto == false{
+            visualizarContatos()
+        }
     }
     
     private func visualizarContatos(){
@@ -62,12 +67,43 @@ class VisualizarViewController: UIViewController {
         lblCelular.text = contato.celular
         lblEmpresa.text = contato.empresa
         lblEmail.text = contato.email
+        let numero : Int32 = (contato.numero)
+        
+        lblNumero.text = String(numero)
+        lblCep.text = contato.cep
        
         btSite.setTitle( contato.site?.absoluteString, for: UIControl.State.normal)
         
 
     }
     
+    
+    @IBAction func AddFotos(_ sender: Any) {
+        addFoto = true
+        imagePicker.delegate = self
+        imagePicker.sourceType = UIImagePickerController.SourceType.savedPhotosAlbum
+        self.present(imagePicker, animated: true, completion: nil)
+    }
+    
+
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        
+        
+        if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
+            imgContato.image = image
+        } else{
+            print("Erro ao abrir")
+        }
+        dismiss(animated: true, completion: nil)
+        
+        //let imagem = (img_view?.image)
+        //if imagem != nil {
+            
+         //   foto.imagem = imagem!.pngData()
+          //  contato.addToImagens(foto)
+        //}
+        
+    }
     
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -80,9 +116,11 @@ class VisualizarViewController: UIViewController {
         }else if segue.identifier == "webView"{
             let next = segue.destination as! WebViewController
              next.site = contatoVM.contatos[index].site
-          //  next.site = URL(string: "www.cade.com.br")
         }else if segue.identifier == "fotos"{
             let next = segue.destination as! CollectionViewController
+            next.editContato = contatoVM.contatos[index]
+        }else if segue.identifier == "map"{
+            let next = segue.destination as! MapViewController
             next.editContato = contatoVM.contatos[index]
         }
     }
