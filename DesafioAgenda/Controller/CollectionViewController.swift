@@ -10,16 +10,19 @@ import UIKit
 
 private let reuseIdentifier = "Cell"
 
-//https://www.ioscreator.com/tutorials/custom-collection-view-cell-ios-tutorial
-
 class CollectionViewController: UICollectionViewController {
     let myImage = UIImage(named: "Apple_Swift_Logo")
     var owner : ContatosTableViewController?
-
+    var imagens: [UIImage] = []
     var editContato: Contato?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        for im in editContato!.imagens!{
+            let imagem = im as! Foto
+            imagens.append(UIImage(data: imagem.imagem!)!)
+        }
     }
     
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -35,10 +38,7 @@ class CollectionViewController: UICollectionViewController {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! CollectionViewCell
         
-        for im in editContato!.imagens!{
-            let imagem = im as! Foto
-            cell.imgView.image = UIImage(data: imagem.imagem!)
-        }
+        cell.imgView.image = imagens[indexPath.row]
         
         return cell
     }
