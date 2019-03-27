@@ -50,9 +50,9 @@ class ContatosTableViewController: UITableViewController {
         return contatoVM.contatos.count
     }
     
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        return true
-    }
+   override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+      return true
+   }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
@@ -67,7 +67,7 @@ class ContatosTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             let contato = contatoVM.contatos[indexPath.row]
-            contexto.delete(contato)
+           contexto.delete(contato)
             contatoVM.saveData()
             //contatoVM.contatos.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
