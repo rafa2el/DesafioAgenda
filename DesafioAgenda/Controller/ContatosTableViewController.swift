@@ -124,4 +124,14 @@ class ContatosTableViewController: UITableViewController {
        // self.navigationController?.popViewController(animated: true)
         
     }
+    
+    func addFoto(_ fotoData : Data, _ index: Int) {
+       let contato = contatoVM.contatos[index]
+        let foto = Foto(context: contexto)
+        foto.imagem = fotoData
+        contato.addToImagens(foto)
+        contatoVM.saveData()
+        tableView.reloadData()
+        
+    }
 }

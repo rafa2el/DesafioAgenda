@@ -58,7 +58,6 @@ UINavigationControllerDelegate{
         for im in contato.imagens!{
             let imagem = im as! Foto
             imgContato.image = UIImage(data: imagem.imagem!)
-            break
         }
  
         lblNome.text = contato.nome
@@ -90,18 +89,16 @@ UINavigationControllerDelegate{
         
         
         if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
-            imgContato.image = image
+            if image != nil {
+                imgContato.image = image
+                owner?.addFoto(image.pngData()!, index)
+            }
+ 
         } else{
             print("Erro ao abrir")
         }
         dismiss(animated: true, completion: nil)
         
-        //let imagem = (img_view?.image)
-        //if imagem != nil {
-            
-         //   foto.imagem = imagem!.pngData()
-          //  contato.addToImagens(foto)
-        //}
         
     }
     

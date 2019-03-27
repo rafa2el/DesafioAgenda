@@ -64,7 +64,6 @@ UINavigationControllerDelegate{
             for im in editContato!.imagens!{
                 let imagem = im as! Foto
                 img_view.image = UIImage(data: imagem.imagem!)
-                break
             }
             
         }
