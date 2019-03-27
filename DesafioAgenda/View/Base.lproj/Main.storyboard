@@ -140,6 +140,13 @@
                                                     <action selector="AddFotos:" destination="jOm-OF-UhL" eventType="touchUpInside" id="TxG-Ak-ncJ"/>
                                                 </connections>
                                             </button>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZSu-c6-Qid">
+                                                <rect key="frame" x="303" y="51" width="42" height="21"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </view>
@@ -307,6 +314,7 @@
                         <outlet property="lblNome" destination="GPZ-ew-Edq" id="sfw-XR-OQX"/>
                         <outlet property="lblNumero" destination="OJw-QZ-P0A" id="1T2-hh-XIs"/>
                         <outlet property="lblTelResidencial" destination="MSa-j3-ahZ" id="3X7-q2-prH"/>
+                        <outlet property="qtd" destination="ZSu-c6-Qid" id="NNW-41-Kr4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xVi-Nh-BMA" userLabel="First Responder" sceneMemberID="firstResponder"/>

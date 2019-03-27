@@ -28,6 +28,7 @@ UINavigationControllerDelegate{
     @IBOutlet weak var lblTelResidencial: UILabel!
     @IBOutlet weak var lblNumero: UILabel!
     @IBOutlet weak var lblCep: UILabel!
+    @IBOutlet weak var qtd: UILabel!
     
     
     @IBOutlet weak var btSite: UIButton!
@@ -46,6 +47,10 @@ UINavigationControllerDelegate{
     
     
     override func viewWillAppear(_ animated: Bool) {
+        let contato = contatoVM.contatos[index]
+        let ct: Int = (contato.imagens?.count)!
+        qtd.text = "(\(ct))"
+        
         if addFoto == false{
             visualizarContatos()
         }
