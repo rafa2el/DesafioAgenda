@@ -18,48 +18,40 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KJk-du-10w">
-                                <rect key="frame" x="33" y="356" width="309" height="43"/>
-                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="43" id="86Y-Mg-tg1"/>
-                                </constraints>
-                                <state key="normal" title="Agenda">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="5"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <segue destination="F2G-g6-d5l" kind="show" identifier="listar" id="cdd-3J-nTT"/>
-                                </connections>
-                            </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_contact.png" translatesAutoresizingMaskIntoConstraints="NO" id="d9a-Yg-gim">
-                                <rect key="frame" x="67" y="144" width="240" height="128"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="240" id="N1j-9L-pvs"/>
-                                    <constraint firstAttribute="height" constant="128" id="XkP-7s-bBS"/>
-                                </constraints>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Agenda" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lOf-rH-sLl">
-                                <rect key="frame" x="124" y="280" width="127" height="29"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="DNS-at-eYh">
+                                <rect key="frame" x="0.0" y="64" width="375" height="184"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_contact.png" translatesAutoresizingMaskIntoConstraints="NO" id="d9a-Yg-gim">
+                                        <rect key="frame" x="123.5" y="0.0" width="128" height="128"/>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KJk-du-10w">
+                                        <rect key="frame" x="37.5" y="144" width="300" height="40"/>
+                                        <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="300" id="AxL-TM-Ly3"/>
+                                            <constraint firstAttribute="height" constant="40" id="eU9-Mt-GhR"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                        <state key="normal" title="Agenda">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="5"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <segue destination="F2G-g6-d5l" kind="show" identifier="listar" id="cdd-3J-nTT"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" red="0.83741801979999997" green="0.83743780850000005" blue="0.83742713930000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="KJk-du-10w" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="33" id="6Wp-3v-nAv"/>
-                            <constraint firstItem="d9a-Yg-gim" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="67" id="Hth-xq-lVA"/>
-                            <constraint firstItem="d9a-Yg-gim" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="80" id="LCW-gQ-HuN"/>
-                            <constraint firstItem="KJk-du-10w" firstAttribute="top" secondItem="d9a-Yg-gim" secondAttribute="bottom" constant="84" id="aBn-pi-ARB"/>
-                            <constraint firstItem="KJk-du-10w" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="292" id="jVt-2q-vWr"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="d9a-Yg-gim" secondAttribute="trailing" constant="68" id="ykM-8h-W86"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="KJk-du-10w" secondAttribute="trailing" constant="33" id="zU8-xx-ZvA"/>
+                            <constraint firstItem="DNS-at-eYh" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="37D-7g-w7U"/>
+                            <constraint firstItem="DNS-at-eYh" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="82Q-Cw-pPv"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="DNS-at-eYh" secondAttribute="trailing" id="j3M-kH-MhA"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -73,19 +65,49 @@
         <scene sceneID="VLb-XB-LvC">
             <objects>
                 <tableViewController id="F2G-g6-d5l" customClass="ContatosTableViewController" customModule="DesafioAgenda" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="AVn-sD-hmd">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleAspectFit" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="AVn-sD-hmd">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.83741801979999997" green="0.83743780850000005" blue="0.83742713930000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="contatos" rowHeight="80" id="R9I-s2-KUg">
-                                <rect key="frame" x="0.0" y="28" width="375" height="80"/>
+                            <tableViewCell clipsSubviews="YES" alpha="0.90000000000000002" contentMode="scaleAspectFit" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="9" reuseIdentifier="contatos" rowHeight="43" id="R9I-s2-KUg" customClass="TableTableViewCell" customModule="DesafioAgenda" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="43"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="R9I-s2-KUg" id="uKt-aM-Kts">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="79.5"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" ambiguous="YES" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="R9I-s2-KUg" id="uKt-aM-Kts">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="42.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="a6e-Su-vfQ">
+                                            <rect key="frame" x="5" y="0.0" width="40" height="34"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="34" id="ppN-WS-XwH"/>
+                                                <constraint firstAttribute="width" constant="40" id="qKX-in-kMb"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kNT-Ve-rLo">
+                                            <rect key="frame" x="64" y="3" width="295" height="23"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="295" id="P6I-6G-q9c"/>
+                                                <constraint firstAttribute="height" constant="23" id="m0q-G0-b4v"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="a6e-Su-vfQ" firstAttribute="top" secondItem="uKt-aM-Kts" secondAttribute="top" id="1Yc-WI-gTF"/>
+                                        <constraint firstAttribute="bottom" secondItem="kNT-Ve-rLo" secondAttribute="bottom" constant="16.5" id="3Hz-I1-lhB"/>
+                                        <constraint firstItem="a6e-Su-vfQ" firstAttribute="leading" secondItem="uKt-aM-Kts" secondAttribute="leading" constant="5" id="HjJ-E4-IGQ"/>
+                                        <constraint firstAttribute="bottom" secondItem="a6e-Su-vfQ" secondAttribute="bottom" id="PNT-ar-HCl"/>
+                                        <constraint firstAttribute="trailing" secondItem="kNT-Ve-rLo" secondAttribute="trailing" constant="16" id="QKE-sY-F5Y"/>
+                                        <constraint firstItem="kNT-Ve-rLo" firstAttribute="leading" secondItem="a6e-Su-vfQ" secondAttribute="trailing" constant="19" id="s9O-uH-Eyv"/>
+                                        <constraint firstItem="kNT-Ve-rLo" firstAttribute="top" secondItem="uKt-aM-Kts" secondAttribute="top" constant="3" id="uKC-Bo-ZD7"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="imgTable" destination="a6e-Su-vfQ" id="sJS-5c-AQb"/>
+                                    <outlet property="lblNome" destination="kNT-Ve-rLo" id="xOK-ky-G0v"/>
                                     <segue destination="jOm-OF-UhL" kind="show" identifier="visualizar" id="hN1-0B-BGl"/>
                                 </connections>
                             </tableViewCell>
@@ -307,7 +329,7 @@
                         <viewLayoutGuide key="safeArea" id="SkL-rX-gMd"/>
                     </view>
                     <navigationItem key="navigationItem" title="Visualizar" id="sQb-4A-p41">
-                        <barButtonItem key="rightBarButtonItem" systemItem="edit" id="iIQ-EO-4va">
+                        <barButtonItem key="rightBarButtonItem" title="Editar" id="iIQ-EO-4va">
                             <connections>
                                 <segue destination="TIE-bt-sTq" kind="show" identifier="edit" id="LFQ-3c-yHS"/>
                             </connections>
@@ -678,12 +700,12 @@
                         <viewLayoutGuide key="safeArea" id="n4O-oH-aYY"/>
                     </view>
                     <navigationItem key="navigationItem" title="Inserir Contato" id="ZaJ-EC-kTy">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="wsP-LA-dmh">
+                        <barButtonItem key="leftBarButtonItem" title="Cancelar" id="wsP-LA-dmh">
                             <connections>
                                 <action selector="btnCancel:" destination="TIE-bt-sTq" id="aSQ-bP-8cS"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="pAR-tn-of8">
+                        <barButtonItem key="rightBarButtonItem" title="Salvar" id="pAR-tn-of8">
                             <connections>
                                 <action selector="btn_save:" destination="TIE-bt-sTq" id="VeX-jy-0bE"/>
                             </connections>
@@ -782,6 +804,6 @@
         <image name="icon_contact.png" width="128" height="128"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="LFQ-3c-yHS"/>
+        <segue reference="4uO-RW-CXW"/>
     </inferredMetricsTieBreakers>
 </document>

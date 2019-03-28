@@ -12,8 +12,8 @@ import CoreData
 class ContatosTableViewController: UITableViewController {
 
     var contatoVM: ContatoViewModel!
-    let contexto = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-
+    let contexto = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext    
+    
     lazy var atualizar:UIRefreshControl = {
         let refresControl = UIRefreshControl()
         refresControl.addTarget(self, action: #selector(ContatosTableViewController.atualizarDados(_:)), for: .valueChanged)
@@ -56,12 +56,32 @@ class ContatosTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "contatos", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "contatos", for: indexPath) as! TableTableViewCell
+        
+        //imagem redonda
+        //cell.imgTable.layer.borderWidth = 0.1
+        cell.imgTable.layer.masksToBounds = false
+        cell.imgTable.layer.borderColor = UIColor.black.cgColor
+        cell.imgTable.layer.cornerRadius = cell.imgTable.frame.height / 2
+        cell.imgTable.clipsToBounds = true
+        
+        
+        
         let prg = contatoVM.contatos
+        var imagens: [UIImage] = []
+        
+        for im in prg[indexPath.row].imagens!{
+            let imagem = im as! Foto
+            imagens.append(UIImage(data: imagem.imagem!)!)
+        }
        
-        cell.textLabel?.text = prg[indexPath.row].nome
-    
+        cell.lblNome.text = prg[indexPath.row].nome
+        if prg[indexPath.row].imagens!.count > 0{
+            cell.imgTable.image = imagens[imagens.count - 1]
+        }
+        
         return cell
+        
     }
 
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {

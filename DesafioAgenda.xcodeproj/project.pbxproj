@@ -13,6 +13,7 @@
 		53FECCE822483B9C001406F5 /* ContatosViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53FECCE722483B9C001406F5 /* ContatosViewModel.swift */; };
 		53FECCEA2248571C001406F5 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53FECCE92248571C001406F5 /* WebViewController.swift */; };
 		53FECCEC2248633B001406F5 /* icon_contact.png in Resources */ = {isa = PBXBuildFile; fileRef = 53FECCEB2248633B001406F5 /* icon_contact.png */; };
+		57198C1F224C3D800014E567 /* TableTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57198C1E224C3D800014E567 /* TableTableViewCell.swift */; };
 		579BFAC122499C5000B52ABC /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 579BFAC022499C5000B52ABC /* CollectionViewController.swift */; };
 		579BFAC72249AC5200B52ABC /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 579BFAC62249AC5200B52ABC /* CollectionViewCell.swift */; };
 		57CBC5D622405E8200A04623 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57CBC5D522405E8200A04623 /* AppDelegate.swift */; };
@@ -32,6 +33,7 @@
 		53FECCE722483B9C001406F5 /* ContatosViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContatosViewModel.swift; sourceTree = "<group>"; };
 		53FECCE92248571C001406F5 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		53FECCEB2248633B001406F5 /* icon_contact.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_contact.png; sourceTree = "<group>"; };
+		57198C1E224C3D800014E567 /* TableTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableTableViewCell.swift; sourceTree = "<group>"; };
 		579BFAC022499C5000B52ABC /* CollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
 		579BFAC62249AC5200B52ABC /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		57CBC5D222405E8200A04623 /* DesafioAgenda.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DesafioAgenda.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -62,6 +64,7 @@
 			children = (
 				53FECCE722483B9C001406F5 /* ContatosViewModel.swift */,
 				579BFAC62249AC5200B52ABC /* CollectionViewCell.swift */,
+				57198C1E224C3D800014E567 /* TableTableViewCell.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -202,6 +205,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				57CBC5D822405E8200A04623 /* ViewController.swift in Sources */,
+				57198C1F224C3D800014E567 /* TableTableViewCell.swift in Sources */,
 				53FECCEA2248571C001406F5 /* WebViewController.swift in Sources */,
 				53FECCE822483B9C001406F5 /* ContatosViewModel.swift in Sources */,
 				57CBC5DE22405E8200A04623 /* DesafioAgenda.xcdatamodeld in Sources */,
