@@ -10,6 +10,7 @@
 		538C3D55224AE1DF00A713FD /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 538C3D54224AE1DF00A713FD /* MapViewController.swift */; };
 		53ECFC0322447CA800098F81 /* VisualizarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53ECFC0222447CA800098F81 /* VisualizarViewController.swift */; };
 		53FC74BE2241B0E5001EED11 /* EditContatoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53FC74BD2241B0E5001EED11 /* EditContatoViewController.swift */; };
+		53FE656D22501A4D0075D573 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 53FE656C22501A4D0075D573 /* Assets.xcassets */; };
 		53FECCE822483B9C001406F5 /* ContatosViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53FECCE722483B9C001406F5 /* ContatosViewModel.swift */; };
 		53FECCEA2248571C001406F5 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53FECCE92248571C001406F5 /* WebViewController.swift */; };
 		53FECCEC2248633B001406F5 /* icon_contact.png in Resources */ = {isa = PBXBuildFile; fileRef = 53FECCEB2248633B001406F5 /* icon_contact.png */; };
@@ -20,7 +21,6 @@
 		57CBC5D822405E8200A04623 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57CBC5D722405E8200A04623 /* ViewController.swift */; };
 		57CBC5DB22405E8200A04623 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57CBC5D922405E8200A04623 /* Main.storyboard */; };
 		57CBC5DE22405E8200A04623 /* DesafioAgenda.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 57CBC5DC22405E8200A04623 /* DesafioAgenda.xcdatamodeld */; };
-		57CBC5E022405E8300A04623 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57CBC5DF22405E8300A04623 /* Assets.xcassets */; };
 		57CBC5E322405E8300A04623 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57CBC5E122405E8300A04623 /* LaunchScreen.storyboard */; };
 		57CBC5EE2240614700A04623 /* ContatosTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57CBC5ED2240614700A04623 /* ContatosTableViewController.swift */; };
 		57CBC5F02240615A00A04623 /* Contatos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57CBC5EF2240615A00A04623 /* Contatos.swift */; };
@@ -30,6 +30,7 @@
 		538C3D54224AE1DF00A713FD /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		53ECFC0222447CA800098F81 /* VisualizarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisualizarViewController.swift; sourceTree = "<group>"; };
 		53FC74BD2241B0E5001EED11 /* EditContatoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditContatoViewController.swift; sourceTree = "<group>"; };
+		53FE656C22501A4D0075D573 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../../../../Downloads/Assets.xcassets; sourceTree = "<group>"; };
 		53FECCE722483B9C001406F5 /* ContatosViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContatosViewModel.swift; sourceTree = "<group>"; };
 		53FECCE92248571C001406F5 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		53FECCEB2248633B001406F5 /* icon_contact.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_contact.png; sourceTree = "<group>"; };
@@ -41,7 +42,6 @@
 		57CBC5D722405E8200A04623 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		57CBC5DA22405E8200A04623 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		57CBC5DD22405E8200A04623 /* DesafioAgenda.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DesafioAgenda.xcdatamodel; sourceTree = "<group>"; };
-		57CBC5DF22405E8300A04623 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		57CBC5E222405E8300A04623 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		57CBC5E422405E8300A04623 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		57CBC5ED2240614700A04623 /* ContatosTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContatosTableViewController.swift; sourceTree = "<group>"; };
@@ -124,7 +124,7 @@
 		57CBC5EC224060E200A04623 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				57CBC5DF22405E8300A04623 /* Assets.xcassets */,
+				53FE656C22501A4D0075D573 /* Assets.xcassets */,
 				53FECCEB2248633B001406F5 /* icon_contact.png */,
 				57CBC5D922405E8200A04623 /* Main.storyboard */,
 				57CBC5E122405E8300A04623 /* LaunchScreen.storyboard */,
@@ -191,9 +191,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				57CBC5E322405E8300A04623 /* LaunchScreen.storyboard in Resources */,
-				57CBC5E022405E8300A04623 /* Assets.xcassets in Resources */,
 				57CBC5DB22405E8200A04623 /* Main.storyboard in Resources */,
 				53FECCEC2248633B001406F5 /* icon_contact.png in Resources */,
+				53FE656D22501A4D0075D573 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
